@@ -1,13 +1,13 @@
 # Contributor: malex984 at googlemail dot com
 
 pkgname=msrp-git
-pkgver=20101203
+pkgver=20101216
 pkgrel=1
 pkgdesc="Meta search and replace tool for both filenames and files: improved"
 arch=('i686' 'x86_64')
 url="https://github.com/malex984/msrp"
-license=("unknown")
-groups=()
+license=("Simplified BSD License")
+groups=(editors)
 depends=(pcre)
 makedepends=('git' 'pkg-config' 'automake' 'autoconf')
 conflicts=('msrp')
@@ -20,6 +20,7 @@ noextract=()
 
 _gitroot="git://github.com/malex984/msrp.git"
 _gitname="msrp"
+_gitbranch="master"
 
 build() {
     cd ${srcdir}
@@ -29,7 +30,7 @@ build() {
         cd ${_gitname}
         git pull origin
     else
-        git clone --depth 1 -b master ${_gitroot} 
+        git clone --depth 1 -b ${_gitbranch} ${_gitroot} 
     fi
     msg "GIT checkout done or server timeout"
 
