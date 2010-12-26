@@ -1,15 +1,15 @@
-# Contributor: malex984 at googlemail dot com
+# Maintainer: malex984 at googlemail dot com
 
 pkgname=msrp-git
-pkgver=20101216
+pkgver=20101226
 pkgrel=1
 pkgdesc="Meta search and replace tool for both filenames and files: improved"
 arch=('i686' 'x86_64')
-url="https://github.com/malex984/msrp"
+url="http://msrp.github.com"
 license=("Simplified BSD License")
 groups=(editors)
 depends=(pcre)
-makedepends=('git' 'pkg-config' 'automake' 'autoconf')
+makedepends=('git' 'cmake')
 conflicts=('msrp')
 provides=('msrp')
 replaces=(msrp)
@@ -35,23 +35,24 @@ build() {
     msg "GIT checkout done or server timeout"
 
     rm -rf ${srcdir}/${_gitname}-build
-    cp -r  ${srcdir}/${_gitname} ${srcdir}/${_gitname}-build
+    mkdir ${srcdir}/${_gitname}-build
+#    cp -r  ${srcdir}/${_gitname} ${srcdir}/${_gitname}-build
+    
     cd ${srcdir}/${_gitname}-build
 
-    msg "Generating 'configure'..."
-    aclocal && automake --add-missing && autoconf
-
-    msg "Configuring..."
-    ./configure --prefix=/usr
+    msg "Configuring... and generating makefiles..."
+    cmake -D CMAKE_INSTALL_PREFIX=/usr/ -D CMAKE_BUILD_TYPE="Release" ${srcdir}/${_gitname} || return 1
 
     msg "Starting make..."
     make || return 1
     
-    msg "Starting file.cc test..."
-    cd test || return 1
-    ./all.sh || return 1
-    cd -
+#    msg "Starting tests..."
+#    make check || return 1
     
     msg "Installing..."
     make DESTDIR="${pkgdir}/" install || return 1
+    
+    
+    
 }
+
