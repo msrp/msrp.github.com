@@ -1,43 +1,62 @@
 <html>
-<body>
-<pre>
-Hi There!
+<head>
+<title>MSRP - Meta Search and RePlace</title>
 
-Brief overview: <a href="http://agateau.wordpress.com/2010/03/10/msrp-a-useful-addition-to-your-toolbo/">msrp, a useful addition to your toolbox</a>
+<script type="text/javascript">
 
-Get current <b>Sources</b> (from <a href="http://github.com/malex984/msrp">http://github.com/malex984/msrp</a>): 
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12903143-7']);
+_gaq.push(['_trackPageview']);
 
-git clone git://github.com/malex984/msrp.git
-
-
-Latest release: <a href="releases/msrp-0.9.5.tar.bz2">0.9.5</a>
-
-Besides, 
-1. in case you use Arch-Linux you may use: <a href="Arch/PKGBUILD">PKGBUILD</a> (which is also to be found in AUR: <a href="http://aur.archlinux.org/packages.php?ID=43676">msrg-git</a>)
-2. Debian people may use the following repository: <a href="https://github.com/malex984/msrp/tree/debian-pkg-from-rudi">original debian package by Rudi</a>
-
-Please, don't hesitate to post any feedback (any comments are really welcome!) at <a href="http://groups.google.com/group/msrp-tool">our mailing group</a>.
-
-
-See you later, 
- msrp'team
-
-
-</pre><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-12903143-7']);
-      _gaq.push(['_trackPageview']);
-      
-        (function() {
-	    var ga = document.createElement('script'); ga.type =
-'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
-'http://www') + '.google-analytics.com/ga.js';
+(function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);
-  })();
+    s.parentNode.insertBefore(ga, s);
+})();
   
 </script>
+</head>
+<body>
+<h1>MSRP - Meta Search and RePlace</h1>
+
+<h2>Presentation</h2>
+<p>
+MSRP is a utility to perform regular expression substitutions.
+It reads one or more files as input and modifies both their contents and
+filenames by renaming files if appropriate.
+</p>
+
+<p>
+More about MSRP: <a href="http://agateau.wordpress.com/2010/03/10/msrp-a-useful-addition-to-your-toolbo/">msrp, a useful addition to your toolbox</a>.
+</p>
+
+<h2>Get it</h2>
+
+<h3>Git repository</h3>
+<p>
+Get the source from <a href="http://github.com/malex984/msrp">http://github.com/malex984/msrp</a> with:
+<pre>
+git clone git://github.com/malex984/msrp.git
+</pre>
+</p>
+
+<h3>Source releases</h3>
+<p>
+Latest release: <a href="releases/msrp-0.9.5.tar.bz2">0.9.5</a>
+</p>
+
+<h3>Packages</h3>
+<ul>
+    <li>Arch Linux: <a href="Arch/PKGBUILD">PKGBUILD</a> (which is also to be found in AUR: <a href="http://aur.archlinux.org/packages.php?ID=43676">msrg-git</a>)</li>
+    <li>Ubuntu: <a href="https://launchpad.net/~agateau/+archive/msrp">MSRP Personal Package Archive</a> (should also work for Debian)</li>
+    <li>Opensuse: home:ervin: <a href="https://build.opensuse.org/package/show?package=msrp&project=home%3Aervin">home:ervin</a></li>
+</ul>
+
+<h2>Contact</h2>
+<p>
+Please, do not hesitate to post any feedback (any comments are really welcome!) at <a href="http://groups.google.com/group/msrp-tool">our mailing group</a>.
+</p>
 </body>
 </html>
